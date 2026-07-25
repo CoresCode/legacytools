@@ -1,5 +1,6 @@
 package com.corescode.legacytools;
 
+import com.corescode.legacytools.item.ModItemGroups;
 import com.corescode.legacytools.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
@@ -21,6 +22,8 @@ public class LegacyTools implements ModInitializer {
 		LOGGER.info("Initializing Legacy Tools...");
 
 		ModItems.registerModItems();
+		ModItems.registerModItems();
+		ModItemGroups.registerItemGroups();
 
 		LOGGER.info("Legacy Tools initialized successfully.");
 	}
