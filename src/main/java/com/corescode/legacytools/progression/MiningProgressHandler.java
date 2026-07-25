@@ -2,8 +2,11 @@ package com.corescode.legacytools.progression;
 
 import com.corescode.legacytools.component.LegacyToolData;
 import com.corescode.legacytools.component.ModDataComponents;
-import com.corescode.legacytools.item.ModItems;
+import com.corescode.legacytools.legacy.LegacyToolType;
 import com.corescode.legacytools.util.BlockUtils;
+import com.corescode.legacytools.util.LegacyToolUtils;
+import com.corescode.legacytools.util.LegacyUpgradeUtils;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
@@ -15,9 +18,10 @@ public final class MiningProgressHandler {
 
     public static void handle(Player player, BlockState state) {
 
+
         ItemStack stack = player.getMainHandItem();
 
-        if (!stack.is(ModItems.RUSTED_PICKAXE)) {
+        if (!LegacyToolUtils.isLegacyPickaxe(stack)) {
             return;
         }
 
@@ -33,6 +37,22 @@ public final class MiningProgressHandler {
 
         data = data.withProgress(data.progress() + 1);
 
+        if (ProgressManager.shouldUpgrade(
+                LegacyToolType.PICKAXE,
+                data.stage(),
+                data.progress()
+        )) {
+
+            stack.set(ModDataComponents.LEGACY_DATA, data);
+
+            ItemStack upgraded = LegacyUpgradeUtils.upgrade(stack);
+
+            player.getInventory().setSelectedItem(upgraded);
+
+            return;
+        }
+
         stack.set(ModDataComponents.LEGACY_DATA, data);
     }
+
 }
