@@ -3,13 +3,11 @@
 	"id": "legacytools",
 	"version": "${version}",
 	"name": "Legacy Tools",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Restore forgotten ancient tools to their former glory.",
 	"authors": [
-		"Me!"
+		"CoresCode"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/legacytools/icon.png",
