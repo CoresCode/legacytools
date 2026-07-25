@@ -1,5 +1,6 @@
 package com.corescode.legacytools;
 
+import com.corescode.legacytools.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.resources.Identifier;
@@ -17,12 +18,13 @@ public class LegacyTools implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+		LOGGER.info("Initializing Legacy Tools...");
 
-		LOGGER.info("Initializing Legacy Tools");
+		ModItems.registerModItems();
+
+		LOGGER.info("Legacy Tools initialized successfully.");
 	}
+
 
 	public static Identifier id(String path) {
 		return Identifier.fromNamespaceAndPath(MOD_ID, path);
