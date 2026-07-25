@@ -1,0 +1,17 @@
+{
+  "item.legacytools.rusted_pickaxe": "Rusted Pickaxe",
+  "item.legacytools.rusted_axe": "Rusted Axe",
+  "item.legacytools.rusted_shovel": "Rusted Shovel",
+
+  "item.legacytools.worn_pickaxe": "Worn Pickaxe",
+  "item.legacytools.worn_axe": "Worn Axe",
+  "item.legacytools.worn_shovel": "Worn Shovel",
+
+  "item.legacytools.restored_pickaxe": "Restored Pickaxe",
+  "item.legacytools.restored_axe": "Restored Axe",
+  "item.legacytools.restored_shovel": "Restored Shovel",
+
+  "item.legacytools.perfected_pickaxe": "Perfected Pickaxe",
+  "item.legacytools.perfected_axe": "Perfected Axe",
+  "item.legacytools.perfected_shovel": "Perfected Shovel"
+}
