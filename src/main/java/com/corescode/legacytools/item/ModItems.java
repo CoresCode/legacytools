@@ -1,6 +1,8 @@
 package com.corescode.legacytools.item;
 
 import com.corescode.legacytools.LegacyTools;
+import com.corescode.legacytools.component.LegacyToolData;
+import com.corescode.legacytools.component.ModDataComponents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
@@ -47,7 +49,12 @@ public final class ModItems {
         return register(
                 name,
                 properties -> new LegacyPickaxeItem(
-                        properties.pickaxe(material, -2.0F, -2.8F)
+                        properties
+                                .pickaxe(material, -2.0F, -2.8F)
+                                .component(
+                                        ModDataComponents.LEGACY_DATA,
+                                        LegacyToolData.DEFAULT
+                                )
                 )
         );
     }

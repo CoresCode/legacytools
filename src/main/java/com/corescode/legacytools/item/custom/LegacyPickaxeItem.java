@@ -7,6 +7,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.TooltipDisplay;
 
+
+import com.corescode.legacytools.component.LegacyToolData;
+import com.corescode.legacytools.component.ModDataComponents;
+
 import java.util.function.Consumer;
 
 public class LegacyPickaxeItem extends Item {
@@ -24,13 +28,17 @@ public class LegacyPickaxeItem extends Item {
             TooltipFlag flag
     ) {
 
-        tooltip.accept(Component.empty());
+        LegacyToolData data = stack.get(ModDataComponents.LEGACY_DATA);
+
+        if (data == null) {
+            data = LegacyToolData.DEFAULT;
+        }
 
         tooltip.accept(
                 Component.literal("Stage: ")
                         .withStyle(ChatFormatting.GRAY)
                         .append(
-                                Component.literal("Rusted")
+                                Component.literal(capitalize(data.stage().id()))
                                         .withStyle(ChatFormatting.DARK_RED)
                         )
         );
@@ -39,7 +47,7 @@ public class LegacyPickaxeItem extends Item {
                 Component.literal("Progress: ")
                         .withStyle(ChatFormatting.GRAY)
                         .append(
-                                Component.literal("0 / 20")
+                                Component.literal(data.progress() + " / 20")
                                         .withStyle(ChatFormatting.GOLD)
                         )
         );
@@ -53,4 +61,9 @@ public class LegacyPickaxeItem extends Item {
 
         super.appendHoverText(stack, context, display, tooltip, flag);
     }
+
+    private static String capitalize(String text) {
+        return Character.toUpperCase(text.charAt(0)) + text.substring(1);
+    }
+
 }

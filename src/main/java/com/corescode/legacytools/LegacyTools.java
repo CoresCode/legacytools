@@ -4,10 +4,13 @@ import com.corescode.legacytools.item.ModItemGroups;
 import com.corescode.legacytools.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
+import com.corescode.legacytools.component.ModDataComponents;
 import net.minecraft.resources.Identifier;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.corescode.legacytools.progression.MiningProgressHandler;
+import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 
 public class LegacyTools implements ModInitializer {
 	public static final String MOD_ID = "legacytools";
@@ -21,9 +24,13 @@ public class LegacyTools implements ModInitializer {
 	public void onInitialize() {
 		LOGGER.info("Initializing Legacy Tools...");
 
-		ModItems.registerModItems();
+		ModDataComponents.register();
 		ModItems.registerModItems();
 		ModItemGroups.registerItemGroups();
+
+		PlayerBlockBreakEvents.AFTER.register((level, player, pos, state, blockEntity) -> {
+			MiningProgressHandler.handle(player, state);
+		});
 
 		LOGGER.info("Legacy Tools initialized successfully.");
 	}
