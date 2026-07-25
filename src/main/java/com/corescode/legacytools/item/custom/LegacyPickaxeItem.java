@@ -1,5 +1,6 @@
 package com.corescode.legacytools.item.custom;
 
+import com.corescode.legacytools.component.LegacyStage;
 import com.corescode.legacytools.component.LegacyToolData;
 import com.corescode.legacytools.component.ModDataComponents;
 import com.corescode.legacytools.legacy.LegacyToolType;
@@ -35,39 +36,51 @@ public class LegacyPickaxeItem extends Item {
             data = LegacyToolData.DEFAULT;
         }
 
-        int requiredProgress = ProgressManager.getRequiredProgress(
-                LegacyToolType.PICKAXE,
-                data.stage()
-        );
-
         tooltip.accept(
                 Component.literal("Stage: ")
                         .withStyle(ChatFormatting.GRAY)
                         .append(
                                 Component.literal(capitalize(data.stage().id()))
-                                        .withStyle(ChatFormatting.DARK_RED)
+                                        .withStyle(getStageColor(data.stage()))
                         )
         );
 
-        tooltip.accept(
-                Component.literal("Ores Mined")
-                        .withStyle(ChatFormatting.GRAY)
-        );
+        if (data.stage() != LegacyStage.PERFECTED) {
 
-        tooltip.accept(
-                Component.literal(
-                        ProgressBarUtils.createProgressBar(
-                                data.progress(),
-                                requiredProgress
-                        )
-                ).withStyle(ChatFormatting.GREEN)
-        );
+            int requiredProgress = ProgressManager.getRequiredProgress(
+                    LegacyToolType.PICKAXE,
+                    data.stage()
+            );
 
-        tooltip.accept(
-                Component.literal(
-                        data.progress() + " / " + requiredProgress
-                ).withStyle(ChatFormatting.GOLD)
-        );
+            tooltip.accept(
+                    Component.literal("Ores Mined")
+                            .withStyle(ChatFormatting.GRAY)
+            );
+
+            tooltip.accept(
+                    Component.literal(
+                            ProgressBarUtils.createProgressBar(
+                                    data.progress(),
+                                    requiredProgress
+                            )
+                    ).withStyle(ChatFormatting.GREEN)
+            );
+
+            tooltip.accept(
+                    Component.literal(
+                            data.progress() + " / " + requiredProgress
+                    ).withStyle(ChatFormatting.GOLD)
+            );
+
+        } else {
+
+            tooltip.accept(Component.empty());
+
+            tooltip.accept(
+                    Component.literal("The legacy is complete.")
+                            .withStyle(ChatFormatting.AQUA)
+            );
+        }
 
         tooltip.accept(Component.empty());
 
@@ -77,6 +90,15 @@ public class LegacyPickaxeItem extends Item {
         );
 
         super.appendHoverText(stack, context, display, tooltip, flag);
+    }
+
+    private static ChatFormatting getStageColor(LegacyStage stage) {
+        return switch (stage) {
+            case RUSTED -> ChatFormatting.DARK_RED;
+            case WORN -> ChatFormatting.YELLOW;
+            case RESTORED -> ChatFormatting.GOLD;
+            case PERFECTED -> ChatFormatting.AQUA;
+        };
     }
 
     private static String capitalize(String text) {

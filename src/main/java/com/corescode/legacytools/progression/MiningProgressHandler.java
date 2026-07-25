@@ -5,8 +5,9 @@ import com.corescode.legacytools.component.ModDataComponents;
 import com.corescode.legacytools.legacy.LegacyToolType;
 import com.corescode.legacytools.util.BlockUtils;
 import com.corescode.legacytools.util.LegacyToolUtils;
+import com.corescode.legacytools.util.LegacyUpgradeEffects;
 import com.corescode.legacytools.util.LegacyUpgradeUtils;
-import net.minecraft.world.InteractionHand;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
@@ -17,7 +18,6 @@ public final class MiningProgressHandler {
     }
 
     public static void handle(Player player, BlockState state) {
-
 
         ItemStack stack = player.getMainHandItem();
 
@@ -43,11 +43,20 @@ public final class MiningProgressHandler {
                 data.progress()
         )) {
 
+            LegacyToolData previousData = data;
+
             stack.set(ModDataComponents.LEGACY_DATA, data);
 
             ItemStack upgraded = LegacyUpgradeUtils.upgrade(stack);
 
             player.getInventory().setSelectedItem(upgraded);
+
+            if (player instanceof ServerPlayer serverPlayer) {
+                LegacyUpgradeEffects.play(
+                        serverPlayer,
+                        previousData.stage()
+                );
+            }
 
             return;
         }
