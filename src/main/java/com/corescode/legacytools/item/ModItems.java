@@ -4,10 +4,12 @@ import com.corescode.legacytools.LegacyTools;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.ToolMaterial;
+
+import com.corescode.legacytools.item.custom.LegacyAxeItem;
+import com.corescode.legacytools.item.custom.LegacyPickaxeItem;
+import com.corescode.legacytools.item.custom.LegacyShovelItem;
 
 import java.util.function.Function;
 
@@ -44,7 +46,7 @@ public final class ModItems {
     private static Item registerPickaxe(String name, ToolMaterial material) {
         return register(
                 name,
-                properties -> new Item(
+                properties -> new LegacyPickaxeItem(
                         properties.pickaxe(material, -2.0F, -2.8F)
                 )
         );
@@ -53,10 +55,7 @@ public final class ModItems {
     private static Item registerAxe(String name, ToolMaterial material) {
         return register(
                 name,
-                properties -> new AxeItem(
-                        material,
-                        5.0F,
-                        -3.0F,
+                properties -> new LegacyAxeItem(
                         properties
                 )
         );
@@ -65,10 +64,7 @@ public final class ModItems {
     private static Item registerShovel(String name, ToolMaterial material) {
         return register(
                 name,
-                properties -> new ShovelItem(
-                        material,
-                        1.5F,
-                        -3.0F,
+                properties -> new LegacyShovelItem(
                         properties
                 )
         );
