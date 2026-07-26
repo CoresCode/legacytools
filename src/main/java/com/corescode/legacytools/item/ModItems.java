@@ -13,6 +13,9 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ToolMaterial;
 
+import com.corescode.legacytools.legacy.LegacyToolType;
+import com.corescode.legacytools.tool.LegacyToolComponentFactory;
+import net.minecraft.core.component.DataComponents;
 import java.util.function.Function;
 
 public final class ModItems {
@@ -50,6 +53,13 @@ public final class ModItems {
                 properties -> new LegacyPickaxeItem(
                         properties
                                 .pickaxe(material, -2.0F, -2.8F)
+                                .component(
+                                        DataComponents.TOOL,
+                                        LegacyToolComponentFactory.create(
+                                                LegacyToolType.PICKAXE,
+                                                stage
+                                        )
+                                )
                                 .component(
                                         ModDataComponents.LEGACY_DATA,
                                         new LegacyToolData(
