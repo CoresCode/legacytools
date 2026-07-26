@@ -1,6 +1,7 @@
 package com.corescode.legacytools.util;
 
 import com.corescode.legacytools.component.LegacyStage;
+import com.corescode.legacytools.legacy.LegacyToolType;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.particles.PowerParticleOption;
@@ -9,6 +10,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
 
 public final class LegacyUpgradeEffects {
@@ -108,18 +110,27 @@ public final class LegacyUpgradeEffects {
                 1.0F
         );
 
+        ItemStack stack = player.getMainHandItem();
+        LegacyToolType toolType = LegacyToolUtils.getToolType(stack);
+
+        String toolName = switch (toolType) {
+            case PICKAXE -> "Pickaxe";
+            case AXE -> "Axe";
+            case SHOVEL -> "Shovel";
+        };
+
         Component message = switch (previousStage) {
 
             case RUSTED ->
-                    Component.literal("The Pickaxe is remembering...")
+                    Component.literal("The " + toolName + " is remembering...")
                             .withStyle(ChatFormatting.GRAY);
 
             case WORN ->
-                    Component.literal("The Pickaxe has been restored.")
+                    Component.literal("The " + toolName + " has been restored.")
                             .withStyle(ChatFormatting.GOLD);
 
             case RESTORED ->
-                    Component.literal("The Pickaxe remembers its legacy.")
+                    Component.literal("The " + toolName + " remembers its legacy.")
                             .withStyle(ChatFormatting.AQUA);
 
             case PERFECTED ->

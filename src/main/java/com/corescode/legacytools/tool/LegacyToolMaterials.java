@@ -12,7 +12,7 @@ public final class LegacyToolMaterials {
     public static final ToolMaterial RUSTED =
             new ToolMaterial(
                     BlockTags.INCORRECT_FOR_IRON_TOOL,
-                    1,
+                    120,
                     2.0F,
                     2.0F,
                     100,

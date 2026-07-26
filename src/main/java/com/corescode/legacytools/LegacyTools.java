@@ -4,6 +4,7 @@ import com.corescode.legacytools.ability.LegacyAbilityHandler;
 import com.corescode.legacytools.component.ModDataComponents;
 import com.corescode.legacytools.item.ModItemGroups;
 import com.corescode.legacytools.item.ModItems;
+import com.corescode.legacytools.passive.LegacyPassiveHandler;
 import com.corescode.legacytools.progression.AxeProgressHandler;
 import com.corescode.legacytools.progression.MiningProgressHandler;
 import com.corescode.legacytools.progression.ShovelProgressHandler;
@@ -35,6 +36,8 @@ public class LegacyTools implements ModInitializer {
 			AxeProgressHandler.handle(player, state);
 			ShovelProgressHandler.handle(player, state);
 
+			LegacyPassiveHandler.handle(level, player, pos, state);
+	
 			LegacyAbilityHandler.handle(level, player, pos, state);
 
 		});
