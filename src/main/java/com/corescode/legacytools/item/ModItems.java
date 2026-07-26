@@ -68,6 +68,7 @@ public final class ModItems {
                 name,
                 properties -> new LegacyAxeItem(
                         properties
+                                .axe(material, 5.0F, -3.0F)
                                 .component(
                                         ModDataComponents.LEGACY_DATA,
                                         new LegacyToolData(

@@ -16,4 +16,10 @@ public final class BlockUtils {
 
     }
 
+    public static boolean isLog(BlockState state) {
+
+        return state.is(BlockTags.LOGS);
+
+    }
+
 }

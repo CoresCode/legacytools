@@ -18,7 +18,7 @@ public final class LegacyUpgradeUtils {
 
         return switch (toolType) {
             case PICKAXE -> upgradePickaxe(stack);
-            case AXE -> throw new UnsupportedOperationException("Axe upgrades are not implemented yet.");
+            case AXE -> upgradeAxe(stack);
             case SHOVEL -> throw new UnsupportedOperationException("Shovel upgrades are not implemented yet.");
         };
     }
@@ -66,4 +66,46 @@ public final class LegacyUpgradeUtils {
         return newStack;
     }
 
+    private static ItemStack upgradeAxe(ItemStack oldStack) {
+
+        LegacyToolData data = oldStack.get(ModDataComponents.LEGACY_DATA);
+
+        if (data == null) {
+            data = LegacyToolData.DEFAULT;
+        }
+
+        ItemStack newStack = switch (data.stage()) {
+
+            case RUSTED -> oldStack.transmuteCopy(ModItems.WORN_AXE);
+
+            case WORN -> oldStack.transmuteCopy(ModItems.RESTORED_AXE);
+
+            case RESTORED -> oldStack.transmuteCopy(ModItems.PERFECTED_AXE);
+
+            case PERFECTED -> oldStack.copy();
+        };
+
+        LegacyStage nextStage = switch (data.stage()) {
+
+            case RUSTED -> LegacyStage.WORN;
+
+            case WORN -> LegacyStage.RESTORED;
+
+            case RESTORED -> LegacyStage.PERFECTED;
+
+            case PERFECTED -> LegacyStage.PERFECTED;
+        };
+
+        newStack.set(
+                ModDataComponents.LEGACY_DATA,
+                new LegacyToolData(
+                        nextStage,
+                        0,
+                        data.lastUsedGameTime(),
+                        data.cooldownEndGameTime()
+                )
+        );
+
+        return newStack;
+    }
 }
