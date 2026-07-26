@@ -87,6 +87,7 @@ public final class ModItems {
                 name,
                 properties -> new LegacyShovelItem(
                         properties
+                                .shovel(material, 1.5F, -3.0F)
                                 .component(
                                         ModDataComponents.LEGACY_DATA,
                                         new LegacyToolData(

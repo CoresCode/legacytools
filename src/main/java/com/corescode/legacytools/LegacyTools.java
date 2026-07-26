@@ -5,6 +5,7 @@ import com.corescode.legacytools.item.ModItemGroups;
 import com.corescode.legacytools.item.ModItems;
 import com.corescode.legacytools.progression.AxeProgressHandler;
 import com.corescode.legacytools.progression.MiningProgressHandler;
+import com.corescode.legacytools.progression.ShovelProgressHandler;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.minecraft.resources.Identifier;
@@ -29,6 +30,7 @@ public class LegacyTools implements ModInitializer {
 
 			MiningProgressHandler.handle(player, state);
 			AxeProgressHandler.handle(player, state);
+			ShovelProgressHandler.handle(player, state);
 
 		});
 
