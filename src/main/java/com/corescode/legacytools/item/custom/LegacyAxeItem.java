@@ -15,7 +15,7 @@ import net.minecraft.world.item.component.TooltipDisplay;
 
 import java.util.function.Consumer;
 
-public class LegacyAxeItem extends Item {
+public class LegacyAxeItem extends LegacyToolItem {
 
     public LegacyAxeItem(Item.Properties properties) {
         super(properties);

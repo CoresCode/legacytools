@@ -8,7 +8,7 @@ public final class LegacyToolBalance {
     private LegacyToolBalance() {
     }
 
-    // Mining  Speed
+    // Tool Component Mining Speed
 
     public static float getSpeed(LegacyToolType tool, LegacyStage stage) {
 
@@ -21,6 +21,22 @@ public final class LegacyToolBalance {
             case RESTORED -> 9.0F;
 
             case PERFECTED -> 12.0F;
+        };
+    }
+
+    // Actual Destroy Speed
+
+    public static float getDestroySpeed(LegacyToolType tool, LegacyStage stage) {
+
+        return switch (stage) {
+
+            case RUSTED -> 1.0F;
+
+            case WORN -> 5.0F;
+
+            case RESTORED -> 9.0F;
+
+            case PERFECTED -> 55.0F;
         };
     }
 

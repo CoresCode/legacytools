@@ -54,4 +54,13 @@ public record LegacyToolData(
     public LegacyToolData withCooldownEndGameTime(long gameTime) {
         return new LegacyToolData(stage, progress, lastUsedGameTime, gameTime);
     }
+
+    public boolean isAbilityActive(long gameTime) {
+        return lastUsedGameTime > 0L
+                && gameTime < lastUsedGameTime + 300L;
+    }
+
+    public boolean isOnCooldown(long gameTime) {
+        return gameTime < cooldownEndGameTime;
+    }
 }

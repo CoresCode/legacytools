@@ -15,7 +15,7 @@ import net.minecraft.world.item.component.TooltipDisplay;
 
 import java.util.function.Consumer;
 
-public class LegacyShovelItem extends Item {
+public class LegacyShovelItem extends LegacyToolItem {
 
     public LegacyShovelItem(Item.Properties properties) {
         super(properties);

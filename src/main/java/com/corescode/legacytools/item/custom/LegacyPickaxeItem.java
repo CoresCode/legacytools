@@ -15,7 +15,7 @@ import net.minecraft.world.item.component.TooltipDisplay;
 
 import java.util.function.Consumer;
 
-public class LegacyPickaxeItem extends Item {
+public class LegacyPickaxeItem extends LegacyToolItem {
 
     public LegacyPickaxeItem(Item.Properties properties) {
         super(properties);
@@ -79,6 +79,35 @@ public class LegacyPickaxeItem extends Item {
             tooltip.accept(
                     Component.literal("The legacy is complete.")
                             .withStyle(ChatFormatting.AQUA)
+            );
+
+            tooltip.accept(Component.empty());
+
+            tooltip.accept(
+                    Component.literal("Active Ability")
+                            .withStyle(ChatFormatting.BLUE)
+            );
+
+            tooltip.accept(
+                    Component.literal("The Tool Remembers the Cave")
+                            .withStyle(ChatFormatting.GOLD)
+            );
+
+            tooltip.accept(
+                    Component.literal("Right Click to awaken its memory.")
+                            .withStyle(ChatFormatting.GRAY)
+            );
+
+            tooltip.accept(Component.empty());
+
+            tooltip.accept(
+                    Component.literal("Duration: 15 Seconds")
+                            .withStyle(ChatFormatting.GREEN)
+            );
+
+            tooltip.accept(
+                    Component.literal("Cooldown: 60 Seconds")
+                            .withStyle(ChatFormatting.RED)
             );
         }
 
