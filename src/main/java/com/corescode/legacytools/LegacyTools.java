@@ -15,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.corescode.legacytools.ability.LegacyAbilityTickHandler;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import com.corescode.legacytools.loot.LegacyLootTableModifier;
 
 public class LegacyTools implements ModInitializer {
 
@@ -29,6 +30,7 @@ public class LegacyTools implements ModInitializer {
 		ModDataComponents.register();
 		ModItems.registerModItems();
 		ModItemGroups.registerItemGroups();
+		LegacyLootTableModifier.register();
 
 		PlayerBlockBreakEvents.AFTER.register((level, player, pos, state, blockEntity) -> {
 
