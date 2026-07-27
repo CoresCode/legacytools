@@ -3,10 +3,7 @@ package com.corescode.legacytools.progression;
 import com.corescode.legacytools.component.LegacyToolData;
 import com.corescode.legacytools.component.ModDataComponents;
 import com.corescode.legacytools.legacy.LegacyToolType;
-import com.corescode.legacytools.util.BlockUtils;
-import com.corescode.legacytools.util.LegacyToolUtils;
-import com.corescode.legacytools.util.LegacyUpgradeEffects;
-import com.corescode.legacytools.util.LegacyUpgradeUtils;
+import com.corescode.legacytools.util.*;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -24,6 +21,14 @@ public final class MiningProgressHandler {
 
         if (!LegacyToolUtils.isLegacyPickaxe(stack)) {
             return;
+        }
+
+        ItemStack decayed = LegacyDecayManager.checkDecay(player, stack);
+
+        if (decayed != stack) {
+
+            player.getInventory().setSelectedItem(decayed);
+            stack = decayed;
         }
 
         if (!BlockUtils.isOre(state)) {

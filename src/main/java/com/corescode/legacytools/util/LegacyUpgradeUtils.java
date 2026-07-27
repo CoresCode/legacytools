@@ -6,6 +6,7 @@ import com.corescode.legacytools.component.ModDataComponents;
 import com.corescode.legacytools.item.ModItems;
 import com.corescode.legacytools.legacy.LegacyToolType;
 import net.minecraft.world.item.ItemStack;
+import com.corescode.legacytools.util.LegacyTransformationUtils;
 
 public final class LegacyUpgradeUtils {
 
@@ -31,32 +32,10 @@ public final class LegacyUpgradeUtils {
             data = LegacyToolData.DEFAULT;
         }
 
-        ItemStack newStack = switch (data.stage()) {
-            case RUSTED -> oldStack.transmuteCopy(ModItems.WORN_PICKAXE);
-            case WORN -> oldStack.transmuteCopy(ModItems.RESTORED_PICKAXE);
-            case RESTORED -> oldStack.transmuteCopy(ModItems.PERFECTED_PICKAXE);
-            case PERFECTED -> oldStack.copy();
-        };
-
-        LegacyStage nextStage = switch (data.stage()) {
-            case RUSTED -> LegacyStage.WORN;
-            case WORN -> LegacyStage.RESTORED;
-            case RESTORED -> LegacyStage.PERFECTED;
-            case PERFECTED -> LegacyStage.PERFECTED;
-        };
-
-        newStack.set(
-                ModDataComponents.LEGACY_DATA,
-                new LegacyToolData(
-                        nextStage,
-                        0,
-                        data.lastInteractionGameTime(),
-                        data.abilityStartGameTime(),
-                        data.cooldownEndGameTime()
-                )
+        return LegacyTransformationUtils.transform(
+                oldStack,
+                data.stage().next()
         );
-
-        return newStack;
     }
 
     private static ItemStack upgradeAxe(ItemStack oldStack) {
@@ -67,32 +46,10 @@ public final class LegacyUpgradeUtils {
             data = LegacyToolData.DEFAULT;
         }
 
-        ItemStack newStack = switch (data.stage()) {
-            case RUSTED -> oldStack.transmuteCopy(ModItems.WORN_AXE);
-            case WORN -> oldStack.transmuteCopy(ModItems.RESTORED_AXE);
-            case RESTORED -> oldStack.transmuteCopy(ModItems.PERFECTED_AXE);
-            case PERFECTED -> oldStack.copy();
-        };
-
-        LegacyStage nextStage = switch (data.stage()) {
-            case RUSTED -> LegacyStage.WORN;
-            case WORN -> LegacyStage.RESTORED;
-            case RESTORED -> LegacyStage.PERFECTED;
-            case PERFECTED -> LegacyStage.PERFECTED;
-        };
-
-        newStack.set(
-                ModDataComponents.LEGACY_DATA,
-                new LegacyToolData(
-                        nextStage,
-                        0,
-                        data.lastInteractionGameTime(),
-                        data.abilityStartGameTime(),
-                        data.cooldownEndGameTime()
-                )
+        return LegacyTransformationUtils.transform(
+                oldStack,
+                data.stage().next()
         );
-
-        return newStack;
     }
 
     private static ItemStack upgradeShovel(ItemStack oldStack) {
@@ -103,31 +60,9 @@ public final class LegacyUpgradeUtils {
             data = LegacyToolData.DEFAULT;
         }
 
-        ItemStack newStack = switch (data.stage()) {
-            case RUSTED -> oldStack.transmuteCopy(ModItems.WORN_SHOVEL);
-            case WORN -> oldStack.transmuteCopy(ModItems.RESTORED_SHOVEL);
-            case RESTORED -> oldStack.transmuteCopy(ModItems.PERFECTED_SHOVEL);
-            case PERFECTED -> oldStack.copy();
-        };
-
-        LegacyStage nextStage = switch (data.stage()) {
-            case RUSTED -> LegacyStage.WORN;
-            case WORN -> LegacyStage.RESTORED;
-            case RESTORED -> LegacyStage.PERFECTED;
-            case PERFECTED -> LegacyStage.PERFECTED;
-        };
-
-        newStack.set(
-                ModDataComponents.LEGACY_DATA,
-                new LegacyToolData(
-                        nextStage,
-                        0,
-                        data.lastInteractionGameTime(),
-                        data.abilityStartGameTime(),
-                        data.cooldownEndGameTime()
-                )
+        return LegacyTransformationUtils.transform(
+                oldStack,
+                data.stage().next()
         );
-
-        return newStack;
     }
 }
