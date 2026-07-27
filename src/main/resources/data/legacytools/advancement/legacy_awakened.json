@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "id": "legacytools:rusted_pickaxe"
+    },
+    "title": {
+      "translate": "advancements.legacytools.legacy_awakened.title"
+    },
+    "description": {
+      "translate": "advancements.legacytools.legacy_awakened.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_legacy_tool": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "legacytools:rusted_pickaxe",
+              "legacytools:rusted_axe",
+              "legacytools:rusted_shovel"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 50
+  }
+}

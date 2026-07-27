@@ -1,5 +1,6 @@
 package com.corescode.legacytools.progression;
 
+import com.corescode.legacytools.advancement.LegacyAdvancementHelper;
 import com.corescode.legacytools.component.LegacyToolData;
 import com.corescode.legacytools.component.ModDataComponents;
 import com.corescode.legacytools.legacy.LegacyToolType;
@@ -52,7 +53,13 @@ public final class AxeProgressHandler {
             player.getInventory().setSelectedItem(upgraded);
 
             if (player instanceof ServerPlayer serverPlayer) {
+
                 LegacyUpgradeEffects.play(
+                        serverPlayer,
+                        previousData.stage()
+                );
+
+                LegacyAdvancementHelper.onToolUpgrade(
                         serverPlayer,
                         previousData.stage()
                 );

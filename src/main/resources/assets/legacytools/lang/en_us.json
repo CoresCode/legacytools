@@ -13,5 +13,14 @@
 
   "item.legacytools.perfected_pickaxe": "Perfected Pickaxe",
   "item.legacytools.perfected_axe": "Perfected Axe",
-  "item.legacytools.perfected_shovel": "Perfected Shovel"
+  "item.legacytools.perfected_shovel": "Perfected Shovel",
+
+  "advancements.legacytools.legacy_awakened.title": "Legacy Awakened",
+  "advancements.legacytools.legacy_awakened.description": "Recover your first Legacy Tool.",
+
+  "advancements.legacytools.restoring_history.title": "Restoring History",
+  "advancements.legacytools.restoring_history.description": "Upgrade a Legacy Tool for the first time.",
+
+  "advancements.legacytools.legacy_perfected.title": "Legacy Perfected",
+  "advancements.legacytools.legacy_perfected.description": "Restore a Legacy Tool to its final form."
 }

@@ -1,0 +1,26 @@
+{
+  "parent": "legacytools:restoring_history",
+  "display": {
+    "icon": {
+      "id": "legacytools:perfected_pickaxe"
+    },
+    "title": {
+      "translate": "advancements.legacytools.legacy_perfected.title"
+    },
+    "description": {
+      "translate": "advancements.legacytools.legacy_perfected.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "perfected": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 250
+  }
+}

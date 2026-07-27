@@ -11,6 +11,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
+import com.corescode.legacytools.advancement.LegacyAdvancementHelper;
 
 public final class MiningProgressHandler {
 
@@ -52,7 +53,13 @@ public final class MiningProgressHandler {
             player.getInventory().setSelectedItem(upgraded);
 
             if (player instanceof ServerPlayer serverPlayer) {
+
                 LegacyUpgradeEffects.play(
+                        serverPlayer,
+                        previousData.stage()
+                );
+
+                LegacyAdvancementHelper.onToolUpgrade(
                         serverPlayer,
                         previousData.stage()
                 );

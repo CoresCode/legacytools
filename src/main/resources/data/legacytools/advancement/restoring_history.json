@@ -1,0 +1,26 @@
+{
+  "parent": "legacytools:legacy_awakened",
+  "display": {
+    "icon": {
+      "id": "legacytools:restored_pickaxe"
+    },
+    "title": {
+      "translate": "advancements.legacytools.restoring_history.title"
+    },
+    "description": {
+      "translate": "advancements.legacytools.restoring_history.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "upgrade": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 100
+  }
+}
