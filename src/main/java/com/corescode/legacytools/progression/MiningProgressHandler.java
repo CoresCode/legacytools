@@ -1,5 +1,6 @@
 package com.corescode.legacytools.progression;
 
+import com.corescode.legacytools.advancement.LegacyAdvancementHelper;
 import com.corescode.legacytools.component.LegacyToolData;
 import com.corescode.legacytools.component.ModDataComponents;
 import com.corescode.legacytools.legacy.LegacyToolType;
@@ -8,7 +9,6 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
-import com.corescode.legacytools.advancement.LegacyAdvancementHelper;
 
 public final class MiningProgressHandler {
 

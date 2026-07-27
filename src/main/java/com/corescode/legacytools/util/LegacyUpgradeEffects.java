@@ -20,7 +20,7 @@ public final class LegacyUpgradeEffects {
 
     public static void play(ServerPlayer player, LegacyStage previousStage) {
 
-        ServerLevel level = (ServerLevel) player.level();
+        ServerLevel level = player.level();
 
         Vec3 eye = player.getEyePosition();
         Vec3 look = player.getLookAngle();

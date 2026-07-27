@@ -10,7 +10,6 @@ import com.corescode.legacytools.util.MiningPlaneUtils;
 import com.corescode.legacytools.world.LegacyMiningContext;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
@@ -19,7 +18,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.Set;
-import com.corescode.legacytools.ability.LegacyTreeSearch;
 
 public final class LegacyAbilityHandler {
 

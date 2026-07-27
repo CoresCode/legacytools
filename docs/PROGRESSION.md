@@ -19,7 +19,7 @@ Rusted → Worn
 25 logs
 
 Worn → Restored
-75 logs
+60 logs
 
 Restored → Perfected
 150 logs
@@ -29,10 +29,10 @@ Restored → Perfected
 ## Shovel
 
 Rusted → Worn
-30 blocks
+25 blocks
 
 Worn → Restored
 80 blocks
 
 Restored → Perfected
-160 blocks
+250 blocks

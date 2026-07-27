@@ -1,12 +1,9 @@
 package com.corescode.legacytools.util;
 
-import com.corescode.legacytools.component.LegacyStage;
 import com.corescode.legacytools.component.LegacyToolData;
 import com.corescode.legacytools.component.ModDataComponents;
-import com.corescode.legacytools.item.ModItems;
 import com.corescode.legacytools.legacy.LegacyToolType;
 import net.minecraft.world.item.ItemStack;
-import com.corescode.legacytools.util.LegacyTransformationUtils;
 
 public final class LegacyUpgradeUtils {
 

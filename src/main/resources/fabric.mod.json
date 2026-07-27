@@ -3,13 +3,15 @@
 	"id": "legacytools",
 	"version": "${version}",
 	"name": "Legacy Tools",
-	"description": "Restore forgotten ancient tools to their former glory.",
+	"description": "Restore ancient tools through use, unlock powerful abilities, and preserve their legacy.",
 	"authors": [
 		"CoresCode"
 	],
 	"contact": {
+		"homepage": "https://github.com/CoresCode/legacytools",
+		"issues": "https://github.com/CoresCode/legacytools/issues"
 	},
-	"license": "CC0-1.0",
+	"license": "All rights reserved",
 	"icon": "assets/legacytools/icon.png",
 	"environment": "*",
 	"entrypoints": {

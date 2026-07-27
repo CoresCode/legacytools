@@ -7,16 +7,16 @@ import com.corescode.legacytools.component.ModDataComponents;
 import com.corescode.legacytools.item.custom.LegacyAxeItem;
 import com.corescode.legacytools.item.custom.LegacyPickaxeItem;
 import com.corescode.legacytools.item.custom.LegacyShovelItem;
+import com.corescode.legacytools.legacy.LegacyToolType;
+import com.corescode.legacytools.tool.LegacyToolComponentFactory;
+import com.corescode.legacytools.tool.LegacyToolMaterials;
 import net.minecraft.core.Registry;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ToolMaterial;
 
-import com.corescode.legacytools.legacy.LegacyToolType;
-import com.corescode.legacytools.tool.LegacyToolComponentFactory;
-import net.minecraft.core.component.DataComponents;
-import com.corescode.legacytools.tool.LegacyToolMaterials;
 import java.util.function.Function;
 
 public final class ModItems {

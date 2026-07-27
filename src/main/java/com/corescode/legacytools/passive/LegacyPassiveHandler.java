@@ -5,6 +5,7 @@ import com.corescode.legacytools.component.LegacyToolData;
 import com.corescode.legacytools.component.ModDataComponents;
 import com.corescode.legacytools.item.custom.LegacyAxeItem;
 import com.corescode.legacytools.item.custom.LegacyPickaxeItem;
+import com.corescode.legacytools.item.custom.LegacyShovelItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -12,12 +13,11 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import com.corescode.legacytools.item.custom.LegacyShovelItem;
-import net.minecraft.world.item.Item;
 
 import java.util.concurrent.ThreadLocalRandom;
 

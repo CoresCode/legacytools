@@ -1,8 +1,8 @@
 package com.corescode.legacytools.tag;
 
 import com.corescode.legacytools.LegacyTools;
-import net.minecraft.tags.TagKey;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
 
 public final class ModBlockTags {

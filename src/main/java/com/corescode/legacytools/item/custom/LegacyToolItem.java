@@ -1,7 +1,6 @@
 package com.corescode.legacytools.item.custom;
 
 import com.corescode.legacytools.balance.LegacyToolBalance;
-import com.corescode.legacytools.component.LegacyStage;
 import com.corescode.legacytools.component.LegacyToolData;
 import com.corescode.legacytools.component.ModDataComponents;
 import com.corescode.legacytools.legacy.LegacyToolType;

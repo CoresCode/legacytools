@@ -3,13 +3,13 @@ package com.corescode.legacytools.tool;
 import com.corescode.legacytools.balance.LegacyToolBalance;
 import com.corescode.legacytools.component.LegacyStage;
 import com.corescode.legacytools.legacy.LegacyToolType;
+import com.corescode.legacytools.tag.ModBlockTags;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.component.Tool;
 import net.minecraft.world.level.block.Block;
 
-import com.corescode.legacytools.tag.ModBlockTags;
 import java.util.List;
 
 public final class LegacyToolComponentFactory {

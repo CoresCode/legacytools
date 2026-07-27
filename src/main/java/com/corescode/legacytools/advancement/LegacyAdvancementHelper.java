@@ -1,10 +1,10 @@
 package com.corescode.legacytools.advancement;
 
 import com.corescode.legacytools.component.LegacyStage;
+import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.PlayerAdvancements;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.advancements.AdvancementHolder;
 
 public final class LegacyAdvancementHelper {
 

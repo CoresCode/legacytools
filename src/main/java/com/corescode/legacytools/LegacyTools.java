@@ -1,21 +1,21 @@
 package com.corescode.legacytools;
 
 import com.corescode.legacytools.ability.LegacyAbilityHandler;
+import com.corescode.legacytools.ability.LegacyAbilityTickHandler;
 import com.corescode.legacytools.component.ModDataComponents;
 import com.corescode.legacytools.item.ModItemGroups;
 import com.corescode.legacytools.item.ModItems;
+import com.corescode.legacytools.loot.LegacyLootTableModifier;
 import com.corescode.legacytools.passive.LegacyPassiveHandler;
 import com.corescode.legacytools.progression.AxeProgressHandler;
 import com.corescode.legacytools.progression.MiningProgressHandler;
 import com.corescode.legacytools.progression.ShovelProgressHandler;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.minecraft.resources.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.corescode.legacytools.ability.LegacyAbilityTickHandler;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
-import com.corescode.legacytools.loot.LegacyLootTableModifier;
 
 public class LegacyTools implements ModInitializer {
 
