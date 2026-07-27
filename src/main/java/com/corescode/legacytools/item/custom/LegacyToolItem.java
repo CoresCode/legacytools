@@ -8,13 +8,13 @@ import com.corescode.legacytools.legacy.LegacyToolType;
 import com.corescode.legacytools.util.LegacyToolUtils;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class LegacyToolItem extends Item {
@@ -94,7 +94,7 @@ public class LegacyToolItem extends Item {
                         break;
                     }
 
-                    if (gameTime < data.cooldownEndGameTime()) {
+                    if (data.isOnCooldown(gameTime)) {
 
                         player.sendOverlayMessage(
                                 Component.literal(
@@ -107,14 +107,14 @@ public class LegacyToolItem extends Item {
 
                     stack.set(
                             ModDataComponents.LEGACY_DATA,
-                            data.withLastUsedGameTime(gameTime)
+                            data.withAbilityStartGameTime(gameTime)
+                                    .withLastInteractionGameTime(gameTime)
                                     .withCooldownEndGameTime(gameTime + COOLDOWN_TIME)
                     );
 
                     player.sendOverlayMessage(
                             Component.literal("Ability Activated")
                                     .withStyle(ChatFormatting.AQUA)
-
                     );
                 }
             }
@@ -122,6 +122,7 @@ public class LegacyToolItem extends Item {
 
         return InteractionResult.SUCCESS;
     }
+
     private static String getToolName(ItemStack stack) {
 
         if (stack.getItem() instanceof LegacyPickaxeItem) {

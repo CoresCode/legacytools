@@ -81,6 +81,7 @@ public final class ModItems {
                                                 stage,
                                                 0,
                                                 0L,
+                                                0L,
                                                 0L
                                         )
                                 )
@@ -114,6 +115,7 @@ public final class ModItems {
                                                 stage,
                                                 0,
                                                 0L,
+                                                0L,
                                                 0L
                                         )
                                 )
@@ -141,6 +143,7 @@ public final class ModItems {
                                         new LegacyToolData(
                                                 stage,
                                                 0,
+                                                0L,
                                                 0L,
                                                 0L
                                         )

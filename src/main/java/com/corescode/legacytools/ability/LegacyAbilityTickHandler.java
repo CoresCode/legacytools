@@ -55,7 +55,7 @@ public final class LegacyAbilityTickHandler {
         }
 
         long remainingTicks =
-                (data.lastUsedGameTime() + 300L) - gameTime;
+                (data.abilityStartGameTime() + 300L) - gameTime;
 
         int remainingSeconds =
                 (int) Math.ceil(remainingTicks / 20.0);

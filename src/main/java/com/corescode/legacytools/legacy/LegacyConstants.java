@@ -22,5 +22,10 @@ public final class LegacyConstants {
     public static final int ABILITY_COOLDOWN_TICKS = 60 * 20;
 
     // Decay
-    public static final long DECAY_TIME_TICKS = 20L * 24000L;
+
+    public static final long PERFECTED_DECAY_TICKS = 30L * 24000L;
+
+    public static final long RESTORED_DECAY_TICKS = 40L * 24000L;
+
+    public static final long WORN_DECAY_TICKS = 50L * 24000L;
 }

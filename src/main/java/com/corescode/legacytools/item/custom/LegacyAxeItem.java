@@ -72,20 +72,86 @@ public class LegacyAxeItem extends LegacyToolItem {
                     ).withStyle(ChatFormatting.GOLD)
             );
 
+            if (data.stage() == LegacyStage.RESTORED) {
+
+                tooltip.accept(Component.empty());
+
+                tooltip.accept(
+                        Component.literal("Passive Ability")
+                                .withStyle(ChatFormatting.BLUE)
+                );
+
+                tooltip.accept(
+                        Component.literal("Ancient Harvest")
+                                .withStyle(ChatFormatting.GOLD)
+                );
+
+                tooltip.accept(
+                        Component.literal("Small chance to get an Apple when chopping logs.")
+                                .withStyle(ChatFormatting.GRAY)
+                );
+            }
+
         } else {
 
             tooltip.accept(Component.empty());
 
             tooltip.accept(
-                    Component.literal("The legacy is complete.")
-                            .withStyle(ChatFormatting.AQUA)
+                    Component.literal("The legacy lives on.")
+                            .withStyle(ChatFormatting.DARK_PURPLE)
+            );
+
+            tooltip.accept(Component.empty());
+
+            tooltip.accept(
+                    Component.literal("Passive Ability")
+                            .withStyle(ChatFormatting.BLUE)
+            );
+
+            tooltip.accept(
+                    Component.literal("Ancient Harvest")
+                            .withStyle(ChatFormatting.GOLD)
+            );
+
+            tooltip.accept(
+                    Component.literal("Small chance to get an Apple when chopping logs.")
+                            .withStyle(ChatFormatting.GRAY)
+            );
+
+            tooltip.accept(Component.empty());
+
+            tooltip.accept(
+                    Component.literal("Active Ability")
+                            .withStyle(ChatFormatting.BLUE)
+            );
+
+            tooltip.accept(
+                    Component.literal("Echoes of the Forest")
+                            .withStyle(ChatFormatting.GOLD)
+            );
+
+            tooltip.accept(
+                    Component.literal("Right Click to awaken the echoes.")
+                            .withStyle(ChatFormatting.GRAY)
+            );
+
+            tooltip.accept(Component.empty());
+
+            tooltip.accept(
+                    Component.literal("Duration: 10 Seconds")
+                            .withStyle(ChatFormatting.GREEN)
+            );
+
+            tooltip.accept(
+                    Component.literal("Cooldown: 60 Seconds")
+                            .withStyle(ChatFormatting.RED)
             );
         }
 
         tooltip.accept(Component.empty());
 
         tooltip.accept(
-                Component.literal("\"The tool remembers.\"")
+                Component.literal("\"An ancient tool.\"")
                         .withStyle(ChatFormatting.DARK_GRAY, ChatFormatting.ITALIC)
         );
 

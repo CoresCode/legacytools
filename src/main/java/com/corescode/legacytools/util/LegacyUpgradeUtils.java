@@ -50,7 +50,8 @@ public final class LegacyUpgradeUtils {
                 new LegacyToolData(
                         nextStage,
                         0,
-                        data.lastUsedGameTime(),
+                        data.lastInteractionGameTime(),
+                        data.abilityStartGameTime(),
                         data.cooldownEndGameTime()
                 )
         );
@@ -85,7 +86,8 @@ public final class LegacyUpgradeUtils {
                 new LegacyToolData(
                         nextStage,
                         0,
-                        data.lastUsedGameTime(),
+                        data.lastInteractionGameTime(),
+                        data.abilityStartGameTime(),
                         data.cooldownEndGameTime()
                 )
         );
@@ -120,7 +122,8 @@ public final class LegacyUpgradeUtils {
                 new LegacyToolData(
                         nextStage,
                         0,
-                        data.lastUsedGameTime(),
+                        data.lastInteractionGameTime(),
+                        data.abilityStartGameTime(),
                         data.cooldownEndGameTime()
                 )
         );

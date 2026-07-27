@@ -36,7 +36,9 @@ public final class AxeProgressHandler {
             data = LegacyToolData.DEFAULT;
         }
 
-        data = data.withProgress(data.progress() + 1);
+        data = data.withProgress(data.progress() + 1)
+                .withLastInteractionGameTime(player.level().getGameTime());
+
 
         if (ProgressManager.shouldUpgrade(
                 LegacyToolType.AXE,

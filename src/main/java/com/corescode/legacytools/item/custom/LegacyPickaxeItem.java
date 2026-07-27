@@ -72,13 +72,50 @@ public class LegacyPickaxeItem extends LegacyToolItem {
                     ).withStyle(ChatFormatting.GOLD)
             );
 
+            if (data.stage() == LegacyStage.RESTORED) {
+
+                tooltip.accept(Component.empty());
+
+                tooltip.accept(
+                        Component.literal("Passive Ability")
+                                .withStyle(ChatFormatting.BLUE)
+                );
+
+                tooltip.accept(
+                        Component.literal("Ancient Instinct")
+                                .withStyle(ChatFormatting.GOLD)
+                );
+
+                tooltip.accept(
+                        Component.literal("Small chance to gain Speed for a short while after mining.")
+                                .withStyle(ChatFormatting.GRAY)
+                );
+            }
+
         } else {
 
             tooltip.accept(Component.empty());
 
             tooltip.accept(
-                    Component.literal("The legacy is complete.")
-                            .withStyle(ChatFormatting.AQUA)
+                    Component.literal("The legacy lives on.")
+                            .withStyle(ChatFormatting.DARK_PURPLE)
+            );
+
+            tooltip.accept(Component.empty());
+
+            tooltip.accept(
+                    Component.literal("Passive Ability")
+                            .withStyle(ChatFormatting.BLUE)
+            );
+
+            tooltip.accept(
+                    Component.literal("Ancient Instinct")
+                            .withStyle(ChatFormatting.GOLD)
+            );
+
+            tooltip.accept(
+                    Component.literal("Small chance to gain Speed for a short time after mining.")
+                            .withStyle(ChatFormatting.GRAY)
             );
 
             tooltip.accept(Component.empty());
@@ -89,12 +126,12 @@ public class LegacyPickaxeItem extends LegacyToolItem {
             );
 
             tooltip.accept(
-                    Component.literal("The Tool Remembers the Cave")
+                    Component.literal("Echoes of the Caves")
                             .withStyle(ChatFormatting.GOLD)
             );
 
             tooltip.accept(
-                    Component.literal("Right Click to awaken its memory.")
+                    Component.literal("Right Click to awaken the echoes.")
                             .withStyle(ChatFormatting.GRAY)
             );
 
@@ -114,7 +151,7 @@ public class LegacyPickaxeItem extends LegacyToolItem {
         tooltip.accept(Component.empty());
 
         tooltip.accept(
-                Component.literal("\"The tool remembers.\"")
+                Component.literal("\"An ancient tool.\"")
                         .withStyle(ChatFormatting.DARK_GRAY, ChatFormatting.ITALIC)
         );
 

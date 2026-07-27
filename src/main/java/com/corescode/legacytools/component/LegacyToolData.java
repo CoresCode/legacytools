@@ -6,7 +6,8 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 public record LegacyToolData(
         LegacyStage stage,
         int progress,
-        long lastUsedGameTime,
+        long lastInteractionGameTime,
+        long abilityStartGameTime,
         long cooldownEndGameTime
 ) {
 
@@ -22,8 +23,12 @@ public record LegacyToolData(
                             .forGetter(LegacyToolData::progress),
 
                     Codec.LONG
-                            .fieldOf("last_used_game_time")
-                            .forGetter(LegacyToolData::lastUsedGameTime),
+                            .fieldOf("last_interaction_game_time")
+                            .forGetter(LegacyToolData::lastInteractionGameTime),
+
+                    Codec.LONG
+                            .fieldOf("ability_start_game_time")
+                            .forGetter(LegacyToolData::abilityStartGameTime),
 
                     Codec.LONG
                             .fieldOf("cooldown_end_game_time")
@@ -36,28 +41,63 @@ public record LegacyToolData(
                     LegacyStage.RUSTED,
                     0,
                     0L,
+                    0L,
                     0L
             );
 
     public LegacyToolData withStage(LegacyStage stage) {
-        return new LegacyToolData(stage, progress, lastUsedGameTime, cooldownEndGameTime);
+        return new LegacyToolData(
+                stage,
+                progress,
+                lastInteractionGameTime,
+                abilityStartGameTime,
+                cooldownEndGameTime
+        );
     }
 
     public LegacyToolData withProgress(int progress) {
-        return new LegacyToolData(stage, progress, lastUsedGameTime, cooldownEndGameTime);
+        return new LegacyToolData(
+                stage,
+                progress,
+                lastInteractionGameTime,
+                abilityStartGameTime,
+                cooldownEndGameTime
+        );
     }
 
-    public LegacyToolData withLastUsedGameTime(long gameTime) {
-        return new LegacyToolData(stage, progress, gameTime, cooldownEndGameTime);
+    public LegacyToolData withLastInteractionGameTime(long gameTime) {
+        return new LegacyToolData(
+                stage,
+                progress,
+                gameTime,
+                abilityStartGameTime,
+                cooldownEndGameTime
+        );
+    }
+
+    public LegacyToolData withAbilityStartGameTime(long gameTime) {
+        return new LegacyToolData(
+                stage,
+                progress,
+                lastInteractionGameTime,
+                gameTime,
+                cooldownEndGameTime
+        );
     }
 
     public LegacyToolData withCooldownEndGameTime(long gameTime) {
-        return new LegacyToolData(stage, progress, lastUsedGameTime, gameTime);
+        return new LegacyToolData(
+                stage,
+                progress,
+                lastInteractionGameTime,
+                abilityStartGameTime,
+                gameTime
+        );
     }
 
     public boolean isAbilityActive(long gameTime) {
-        return lastUsedGameTime > 0L
-                && gameTime < lastUsedGameTime + 300L;
+        return abilityStartGameTime > 0L
+                && gameTime < abilityStartGameTime + 300L;
     }
 
     public boolean isOnCooldown(long gameTime) {
