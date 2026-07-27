@@ -14,6 +14,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class LegacyToolItem extends Item {
@@ -37,6 +38,19 @@ public class LegacyToolItem extends Item {
         LegacyToolType toolType = LegacyToolUtils.getToolType(stack);
 
         if (toolType == null) {
+            return super.getDestroySpeed(stack, state);
+        }
+
+        boolean correctTool = switch (toolType) {
+
+            case PICKAXE -> state.is(BlockTags.MINEABLE_WITH_PICKAXE);
+
+            case AXE -> state.is(BlockTags.MINEABLE_WITH_AXE);
+
+            case SHOVEL -> state.is(BlockTags.MINEABLE_WITH_SHOVEL);
+        };
+
+        if (!correctTool) {
             return super.getDestroySpeed(stack, state);
         }
 

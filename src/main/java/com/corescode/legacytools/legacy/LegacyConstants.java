@@ -7,15 +7,15 @@ public final class LegacyConstants {
     // Progression
     public static final int PICKAXE_STAGE_2 = 20;
     public static final int PICKAXE_STAGE_3 = 50;
-    public static final int PICKAXE_STAGE_4 = 140;
+    public static final int PICKAXE_STAGE_4 = 120;
 
     public static final int AXE_STAGE_2 = 25;
-    public static final int AXE_STAGE_3 = 70;
-    public static final int AXE_STAGE_4 = 180;
+    public static final int AXE_STAGE_3 = 60;
+    public static final int AXE_STAGE_4 = 150;
 
-    public static final int SHOVEL_STAGE_2 = 30;
-    public static final int SHOVEL_STAGE_3 = 90;
-    public static final int SHOVEL_STAGE_4 = 220;
+    public static final int SHOVEL_STAGE_2 = 25;
+    public static final int SHOVEL_STAGE_3 = 70;
+    public static final int SHOVEL_STAGE_4 = 200;
 
     // Ability
     public static final int ABILITY_DURATION_TICKS = 15 * 20;
