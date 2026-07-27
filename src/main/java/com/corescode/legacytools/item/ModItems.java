@@ -56,10 +56,10 @@ public final class ModItems {
                                 .pickaxe(
                                         material,
                                         switch (stage) {
-                                            case RUSTED -> 0.0F;
-                                            case WORN -> -2.0F;
-                                            case RESTORED -> -1.0F;
-                                            case PERFECTED -> 0.0F;
+                                            case RUSTED -> 1.0F;
+                                            case WORN -> 3.0F;
+                                            case RESTORED -> 4.0F;
+                                            case PERFECTED -> 6.0F;
                                         },
                                         switch (stage) {
                                             case RUSTED -> -2.8F;

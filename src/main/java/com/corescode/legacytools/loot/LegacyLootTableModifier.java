@@ -33,17 +33,17 @@ public final class LegacyLootTableModifier {
 
         // Abandoned Mineshaft
         if (key.equals(BuiltInLootTables.ABANDONED_MINESHAFT)) {
-            tableBuilder.withPool(createLootPool(70, 10, 10, 10));
+            tableBuilder.withPool(createLootPool(50, 17, 16, 15));
         }
 
         // Ancient City
         else if (key.equals(BuiltInLootTables.ANCIENT_CITY)) {
-            tableBuilder.withPool(createLootPool(75, 7, 7, 7));
+            tableBuilder.withPool(createLootPool(55, 15, 15, 15));
         }
 
         // Woodland Mansion
         else if (key.equals(BuiltInLootTables.WOODLAND_MANSION)) {
-            tableBuilder.withPool(createLootPool(79, 3, 15, 3));
+            tableBuilder.withPool(createLootPool(59, 10, 15, 10));
         }
 
         // Stronghold
@@ -52,22 +52,22 @@ public final class LegacyLootTableModifier {
                         || key.equals(BuiltInLootTables.STRONGHOLD_CROSSING)
                         || key.equals(BuiltInLootTables.STRONGHOLD_LIBRARY)
         ) {
-            tableBuilder.withPool(createLootPool(85, 5, 5, 5));
+            tableBuilder.withPool(createLootPool(65, 11, 11, 11));
         }
 
         // Dungeon
         else if (key.equals(BuiltInLootTables.SIMPLE_DUNGEON)) {
-            tableBuilder.withPool(createLootPool(85, 5, 5, 5));
+            tableBuilder.withPool(createLootPool(65, 11, 11, 12));
         }
 
         // Desert Pyramid
         else if (key.equals(BuiltInLootTables.DESERT_PYRAMID)) {
-            tableBuilder.withPool(createLootPool(94, 2, 2, 2));
+            tableBuilder.withPool(createLootPool(74, 7, 8, 9));
         }
 
         // Jungle Temple
         else if (key.equals(BuiltInLootTables.JUNGLE_TEMPLE)) {
-            tableBuilder.withPool(createLootPool(94, 2, 2, 2));
+            tableBuilder.withPool(createLootPool(74, 9, 8, 9));
         }
 
         // Trial Chambers
@@ -76,7 +76,7 @@ public final class LegacyLootTableModifier {
                         || key.equals(BuiltInLootTables.TRIAL_CHAMBERS_CORRIDOR)
                         || key.equals(BuiltInLootTables.TRIAL_CHAMBERS_INTERSECTION)
         ) {
-            tableBuilder.withPool(createLootPool(91, 3, 3, 3));
+            tableBuilder.withPool(createLootPool(71, 10, 9, 10));
         }
     }
 
