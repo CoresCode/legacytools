@@ -34,3 +34,15 @@ It must be preserved.
 And above all—
 
 **It must be remembered.**
+
+Legacy Tools is a progression-focused Minecraft mod built around a simple idea: what if tools became more valuable the longer you used them, instead of being replaced every time you found a better material?
+
+Players discover forgotten Rusted Tools hidden throughout ancient structures. By mining, chopping, and excavating with them, the tools slowly recover their lost memories and advance through four stages: Rusted, Worn, Restored, and finally Perfected. Each stage visually transforms the tool while also unlocking stronger abilities, culminating in unique passive and active abilities that reward long-term use.
+
+One mechanic I'm particularly proud of is the decay system. Legacy Tools were designed to be carried, not stored forever. If a tool is abandoned in a chest for too long, it gradually loses its memories and decays to an earlier stage. This encourages players to build a lasting connection with their tools rather than treating them as disposable items.
+
+The entire progression system, abilities, textures, lore, loot integration, advancements, and balancing were created specifically for this project. I wanted every stage to feel meaningful and every upgrade to feel earned.
+
+The lore ties everything together by revealing that these tools were originally forged by the civilization that built Minecraft's Ancient Cities. Their knowledge lives on through the memories carried within each tool, waiting to be awakened by a new owner.
+
+This is my first complete public Minecraft mod, and I focused heavily on polish, consistency, and making every mechanic fit naturally into vanilla gameplay. Rather than adding stronger equipment, Legacy Tools aims to give players a reason to keep using—and caring about—the same tool throughout their adventure.

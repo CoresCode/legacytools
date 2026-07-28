@@ -36,7 +36,7 @@ This project follows semantic versioning where possible.
 - Added custom textures and models for every Legacy Tool stage.
 
 ### Gameplay
-
+ 
 - Legacy Tools can be discovered inside various naturally generated structures.
 - Tools become stronger through continued use instead of crafting upgrades.
 - Perfected tools gain powerful abilities while remaining balanced through cooldowns.
